@@ -1,4 +1,4 @@
-var key = '?api_key=RGAPI-1f2583d7-d828-4ccf-ad63-a3ed1c9d265c';
+var key = '?api_key=';
 const URL = 'https://euw1.api.riotgames.com';
 var accDetails;
 var matchHistory;
