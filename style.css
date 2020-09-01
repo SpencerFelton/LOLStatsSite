@@ -1,0 +1,95 @@
+#mostPlayed {
+  height: 10%;
+  width: 10%;
+}
+#matchHistory {
+  width: 1000px;
+  margin: 0px;
+}
+#matchHistory .champion{
+  height: 100%;
+}
+
+.itemsContainer {
+  width: 60px;
+  height: 100%;
+}
+
+.blueTeam .itemsContainer {
+  float: left;
+}
+
+.redTeam .itemsContainer{
+  float: right;
+}
+
+.itemsContainer .item {
+  height: 33%;
+}
+
+.summonerSpells {
+  float: right;
+  height: 60px;
+  width: 30px;
+}
+
+.summonerSpell {
+  height: 50%;
+}
+.matchContainer {
+  width: inherit;
+  height: 300px;
+  padding-bottom: 1%;
+}
+.summoner {
+  overflow: auto;
+  height: 20%;
+}
+.matchContainer .blueTeam {
+  float: left;
+  height: inherit;
+  width: 49.5%;
+  margin-right: 0.5%;
+}
+
+.matchContainer .win {
+  background-color: rgba(102, 163, 255, 0.7);
+}
+
+.matchContainer .lose {
+  background-color: rgba(255, 102, 102, 0.7);
+
+}
+.matchContainer .blueTeam .summoner img{
+  float: right;
+}
+.matchContainer .blueTeam .summoner .summonerName{
+  float: left;
+  overflow: hidden;
+  width: 345px;
+  white-space: nowrap;
+}
+.matchContainer .redTeam{
+  float: right;
+  height: inherit;
+  width: 49.5%;
+  margin-left: 0.5%;
+}
+.matchContainer .redTeam .summoner .summonerName{
+  float: right;
+  overflow: hidden;
+  width: 345px;
+  white-space: nowrap;
+
+}
+.matchContainer .redTeam .summoner img{
+  float: left;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+body{
+  /*background-image: url("IMG_3529.JPG");*/
+}

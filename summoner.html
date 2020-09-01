@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form name="summonerName" onsubmit="return false">
+      Summoner name:
+      <br>
+        <input type="text" name="summoner">
+      <br>
+      <input type="submit" onclick="getSummonerData()" formaction="summoner.html">
+    </form>
+    <div id="summonerDetails">
+      <div id="summonerID">
+      </div>
+      <div class = "clearfix">
+        <div id="mostPlayedChampion">
+        </div>
+      </div>
+      <div id="matchHistory">
+      </div>
+    </div>
+  </body>
+</html>
