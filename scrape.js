@@ -1,4 +1,4 @@
-var key = '?api_key=';
+var key = '?api_key='+api;
 const URL = 'https://euw1.api.riotgames.com';
 var accDetails;
 var matchHistory;
