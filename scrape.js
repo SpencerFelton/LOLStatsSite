@@ -251,7 +251,7 @@ function handleMatchDetailsByMatchID(xhttp){ //create a container for match deta
       var imgPath = itemJsonObjectsArray[item]["image"]["full"];
       var itemImgElement = document.createElement("IMG");
       var idItem = itemJsonObjectsArray[item].image.full.replace(".png","");
-      itemImgElement.setAttribute("src","LeagueImages/10.1.1/img/item/"+imgPath);
+      itemImgElement.setAttribute("src","LeagueImages/10.10.3224670/img/item/"+imgPath);
       itemImgElement.id = idItem;
       itemImgElement.className = "item";
       itemsContainer.appendChild(itemImgElement);
@@ -273,7 +273,7 @@ function handleMatchDetailsByMatchID(xhttp){ //create a container for match deta
     var summonerSpell1ImgElement = document.createElement("IMG");
     var summonerSpellID = matchPlayersGameDetails[i].spell1Id;
     var spellName = summonerSpellByID(summonerSpellID);
-    summonerSpell1ImgElement.setAttribute("src", "LeagueImages/10.1.1/img/spell/"+spellName+".png");
+    summonerSpell1ImgElement.setAttribute("src", "LeagueImages/10.10.3224670/img/spell/"+spellName+".png");
     summonerSpell1ImgElement.className = "summonerSpell";
     summonerSpellContainer.appendChild(summonerSpell1ImgElement);
 
@@ -281,7 +281,7 @@ function handleMatchDetailsByMatchID(xhttp){ //create a container for match deta
     var summonerSpell2ImgElement = document.createElement("IMG");
     var summonerSpellID = matchPlayersGameDetails[i].spell2Id;
     var spellName = summonerSpellByID(summonerSpellID);
-    summonerSpell2ImgElement.setAttribute("src", "LeagueImages/10.1.1/img/spell/"+spellName+".png");
+    summonerSpell2ImgElement.setAttribute("src", "LeagueImages/10.10.3224670/img/spell/"+spellName+".png");
     summonerSpell2ImgElement.className = "summonerSpell";
     summonerSpellContainer.appendChild(summonerSpell2ImgElement);
 
