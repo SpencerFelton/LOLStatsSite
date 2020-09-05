@@ -40,7 +40,9 @@ function handleNameRequest(xhttp){ // parse JSON response from server
   if (previousMatchHistory == null) {
     var matchHistory = document.createElement("div");
     matchHistory.id = "matchHistory";
-    document.getElementById("summonerDetails").appendChild(matchHistory);
+    //document.getElementById("summonerDetails").appendChild(matchHistory);
+
+    $("#summonerDetails").append(matchHistory);
   }
   idRequest(handleIDRequest);
   matchHistoryRequest(handleMatchHistoryRequest);
