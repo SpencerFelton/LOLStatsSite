@@ -82,7 +82,7 @@ function handleIDRequest(xhttp){
   var champID = jsonResponse[0].championId;
   var champName = champByID(champID);
 
-  var textElement = document.createElement("h3");
+  var textElement = document.createElement("h3"); // this can be cleaned up with jQuery
   var text = "Most played champ is: " + champName;
   var textNode = document.createTextNode(text);
   textElement.appendChild(textNode);
