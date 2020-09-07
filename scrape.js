@@ -28,10 +28,13 @@ function handleNameRequest(xhttp){ // parse JSON response from server
 
   accDetails = jsonResponse;
 
-  var textElement = document.createElement("h3");
+  /*var textElement = document.createElement("h3");
   var text = "Your summoner ID is:" + jsonResponse.id
   var textNode = document.createTextNode(text);
-  textElement.appendChild(textNode);
+  textElement.appendChild(textNode);*/
+
+  var textElement = $("<h3></h3>").text("Your summoner ID is:" + jsonResponse.id);
+  $("document").append(textElement)
 
   var masteryChampImgDiv = document.createElement("div");
   masteryChampImgDiv.id = "mostPlayedChampion";
@@ -40,7 +43,6 @@ function handleNameRequest(xhttp){ // parse JSON response from server
   if (previousMatchHistory == null) {
     var matchHistory = document.createElement("div");
     matchHistory.id = "matchHistory";
-    //document.getElementById("summonerDetails").appendChild(matchHistory);
 
     $("#summonerDetails").append(matchHistory);
   }
@@ -58,7 +60,6 @@ function checkSummonerDetailsExist(){
 
 function removeSummonerDetails(){
   var summonerDetails = document.getElementById("summonerDetails");
-  console.log("here");
   while(summonerDetails.firstChild){
     summonerDetails.removeChild(summonerDetails.firstChild);
   }
@@ -82,19 +83,11 @@ function handleIDRequest(xhttp){
   var champID = jsonResponse[0].championId;
   var champName = champByID(champID);
 
-  var textElement = document.createElement("h3"); // this can be cleaned up with jQuery
-  var text = "Most played champ is: " + champName;
-  var textNode = document.createTextNode(text);
-  textElement.appendChild(textNode);
+  var mostPlayedChamp = $("<h3/>").text("Most played champ is:" + champName);
+  var mostPlayedChampImg = $("<img/>").attr("src", "LeagueImages/img/champion/tiles/"+champName+"_0.jpg").attr("id", "mostPlayed");
 
-  var imgElement = document.createElement("img");
-  imgElement.setAttribute("src", "LeagueImages/img/champion/tiles/"+champName+"_0.jpg");
-
-  imgElement.setAttribute("id", "mostPlayed");
-
-
-  document.getElementById("summonerDetails").insertBefore(imgElement, document.getElementById("matchHistory"));
-  document.getElementById("summonerDetails").insertBefore(textElement, document.getElementById("mostPlayedChampion"));
+  $("#summonerDetails").before(mostPlayedChamp);
+  $("#summonerDetails").before(mostPlayedChampImg);
 }
 
 function matchHistoryRequest(callback){
