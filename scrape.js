@@ -28,22 +28,12 @@ function handleNameRequest(xhttp){ // parse JSON response from server
 
   accDetails = jsonResponse;
 
-  /*var textElement = document.createElement("h3");
-  var text = "Your summoner ID is:" + jsonResponse.id
-  var textNode = document.createTextNode(text);
-  textElement.appendChild(textNode);*/
+  var masteryChampImgDiv = $("<div/>").attr("id", "mostPlayedChampion");
+  $("#matchHistory").before(masteryChampImgDiv);
 
-  var textElement = $("<h3></h3>").text("Your summoner ID is:" + jsonResponse.id);
-  $("document").append(textElement)
-
-  var masteryChampImgDiv = document.createElement("div");
-  masteryChampImgDiv.id = "mostPlayedChampion";
-  document.getElementById("summonerDetails").insertBefore(masteryChampImgDiv, document.getElementById("matchHistory"));
-  var previousMatchHistory = document.getElementById("matchHistory");
+  var previousMatchHistory = $("#matchHistory");
   if (previousMatchHistory == null) {
-    var matchHistory = document.createElement("div");
-    matchHistory.id = "matchHistory";
-
+    var matchHistory = $("<div/>").attr("id", "matchHistory");
     $("#summonerDetails").append(matchHistory);
   }
   idRequest(handleIDRequest);
@@ -51,7 +41,6 @@ function handleNameRequest(xhttp){ // parse JSON response from server
 }
 
 function checkSummonerDetailsExist(){
-  var summonerID = document.getElementById("summonerID");
   if (accDetails == null) {
     return false
   }
