@@ -75,8 +75,8 @@ function handleIDRequest(xhttp){
   var mostPlayedChamp = $("<h3/>").text("Most played champ is:" + champName);
   var mostPlayedChampImg = $("<img/>").attr("src", "LeagueImages/img/champion/tiles/"+champName+"_0.jpg").attr("id", "mostPlayed");
 
-  $("#summonerDetails").before(mostPlayedChamp);
-  $("#summonerDetails").before(mostPlayedChampImg);
+  $("#mostPlayedChampion").append(mostPlayedChamp);
+  $("#mostPlayedChampion").append(mostPlayedChampImg);
 }
 
 function matchHistoryRequest(callback){
