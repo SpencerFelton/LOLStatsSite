@@ -66,7 +66,7 @@ function idRequest(callback){
   Http.open('GET', request);
   Http.send();*/
 
-  $.get(request, handleIDRequest)
+  $.get(request, handleIDRequest);
 }
 
 function handleIDRequest(xhttp){
@@ -83,21 +83,22 @@ function handleIDRequest(xhttp){
 function matchHistoryRequest(callback){
   var type = "/lol/match/v4/matchlists/by-account/";
   var request = URL+type+accDetails.accountId+key;
-  const Http = new XMLHttpRequest();
+  /*const Http = new XMLHttpRequest();
   Http.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       callback(this)
     }
   }
   Http.open('GET', request);
-  Http.send();
+  Http.send();*/
+
+  $.get(request, handleMatchHistoryRequest);
 }
 
 function handleMatchHistoryRequest(xhttp){
-  var jsonResponse = JSON.parse(xhttp.responseText);
-  var textToAdd = "Region: " + jsonResponse.matches[0].platformId + " match ID: " + jsonResponse.matches[0].gameId;
+  var textToAdd = "Region: " + xhttp.matches[0].platformId + " match ID: " + xhttp.matches[0].gameId;
   var recentMatches = [];
-  matchHistory = jsonResponse;
+  matchHistory = xhttp;
   console.log(matchHistory);
   var previousMatches = checkForExistingMatchDetails();
   if (previousMatches) {
