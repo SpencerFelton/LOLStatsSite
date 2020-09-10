@@ -8,14 +8,6 @@ function nameRequest(callback){ //ajax request to the server which takes handleN
   var name = document.forms["summonerName"]["summoner"].value;
   var type = "/lol/summoner/v4/summoners/by-name/"
   var request = URL+type+name+key;
-  /*const Http = new XMLHttpRequest();
-  Http.onreadystatechange = function (){
-    if (this.readyState == 4 && this.status == 200) { // success
-      callback(this);
-    }
-  }
-  Http.open('GET', request);
-  Http.send();*/
 
   $.get(request, handleNameRequest);
 }
@@ -57,14 +49,6 @@ function removeSummonerDetails(){
 function idRequest(callback){
   var type = "/lol/champion-mastery/v4/champion-masteries/by-summoner/";
   var request = URL+type+accDetails.id+key;
-  /*const Http = new XMLHttpRequest();
-  Http.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      callback(this);
-    }
-  }
-  Http.open('GET', request);
-  Http.send();*/
 
   $.get(request, handleIDRequest);
 }
@@ -83,14 +67,6 @@ function handleIDRequest(xhttp){
 function matchHistoryRequest(callback){
   var type = "/lol/match/v4/matchlists/by-account/";
   var request = URL+type+accDetails.accountId+key;
-  /*const Http = new XMLHttpRequest();
-  Http.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      callback(this)
-    }
-  }
-  Http.open('GET', request);
-  Http.send();*/
 
   $.get(request, handleMatchHistoryRequest);
 }
