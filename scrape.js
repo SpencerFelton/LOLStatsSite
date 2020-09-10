@@ -57,19 +57,20 @@ function removeSummonerDetails(){
 function idRequest(callback){
   var type = "/lol/champion-mastery/v4/champion-masteries/by-summoner/";
   var request = URL+type+accDetails.id+key;
-  const Http = new XMLHttpRequest();
+  /*const Http = new XMLHttpRequest();
   Http.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       callback(this);
     }
   }
   Http.open('GET', request);
-  Http.send();
+  Http.send();*/
+
+  $.get(request, handleIDRequest)
 }
 
 function handleIDRequest(xhttp){
-  var jsonResponse = JSON.parse(xhttp.responseText);
-  var champID = jsonResponse[0].championId;
+  var champID = xhttp[0].championId;
   var champName = champByID(champID);
 
   var mostPlayedChamp = $("<h3/>").text("Most played champ is:" + champName);
