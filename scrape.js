@@ -8,14 +8,16 @@ function nameRequest(callback){ //ajax request to the server which takes handleN
   var name = document.forms["summonerName"]["summoner"].value;
   var type = "/lol/summoner/v4/summoners/by-name/"
   var request = URL+type+name+key;
-  const Http = new XMLHttpRequest();
+  /*const Http = new XMLHttpRequest();
   Http.onreadystatechange = function (){
     if (this.readyState == 4 && this.status == 200) { // success
       callback(this);
     }
   }
   Http.open('GET', request);
-  Http.send();
+  Http.send();*/
+
+  $.get(request, handleNameRequest);
 }
 
 function handleNameRequest(xhttp){ // parse JSON response from server
@@ -24,9 +26,7 @@ function handleNameRequest(xhttp){ // parse JSON response from server
     removeSummonerDetails();
     accDetails = null
   }
-  var jsonResponse = JSON.parse(xhttp.responseText)
-
-  accDetails = jsonResponse;
+  accDetails = xhttp;
 
   var masteryChampImgDiv = $("<div/>").attr("id", "mostPlayedChampion");
   $("#matchHistory").before(masteryChampImgDiv);
