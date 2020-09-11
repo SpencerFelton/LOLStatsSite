@@ -12,7 +12,7 @@ function nameRequest(callback){ //ajax request to the server which takes handleN
   $.get(request, handleNameRequest);
 }
 
-function handleNameRequest(xhttp){ // parse JSON response from server
+function handleNameRequest(xhttp){ // parse JSON response from server - callback method
   var existingSummonerID = checkSummonerDetailsExist();
   if (existingSummonerID) {
     removeSummonerDetails();
@@ -53,7 +53,7 @@ function idRequest(callback){
   $.get(request, handleIDRequest);
 }
 
-function handleIDRequest(xhttp){
+function handleIDRequest(xhttp){ // callback function
   var champID = xhttp[0].championId;
   var champName = champByID(champID);
 
@@ -71,7 +71,7 @@ function matchHistoryRequest(callback){
   $.get(request, handleMatchHistoryRequest);
 }
 
-function handleMatchHistoryRequest(xhttp){
+function handleMatchHistoryRequest(xhttp){ // callback function
   var textToAdd = "Region: " + xhttp.matches[0].platformId + " match ID: " + xhttp.matches[0].gameId;
   var recentMatches = [];
   matchHistory = xhttp;
