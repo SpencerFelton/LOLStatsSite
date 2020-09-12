@@ -11,6 +11,6 @@ To Run
 
 4.Edit the API key in scrape.js to your own key
 
-5. Open Summoner.html and search!
+5. Open home.html and search!
 
 NOTE: Only works for accounts on the EUW server
