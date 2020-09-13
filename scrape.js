@@ -98,7 +98,7 @@ function requestMatchDetailsByMatchID(id){
   var type = "/lol/match/v4/matches/";
   var request = URL+type+id+key;
   const Http = new XMLHttpRequest();
-  Http.onreadystatechange = function() {
+  Http.onreadystatechange = function() { // this can be changed to jQuery - not as simple as other methods
     if (this.readyState == 4 && this.status == 200) {
       var jsonResponse = JSON.parse(this.responseText);
       recentMatches.push(jsonResponse)
